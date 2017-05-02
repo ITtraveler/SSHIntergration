@@ -1,0 +1,6 @@
+prv\hgs\dao\imp\UserImp.class
+prv\hgs\dao\UserDao.class
+prv\hgs\domain\User.class
+prv\hgs\service\imp\UserServiceImp.class
+prv\hgs\dao\imp\UserImp2.class
+prv\hgs\service\UserService.class

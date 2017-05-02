@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+    	<!-- 1 数据库基本四项配置  -->
+    	<property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+    	<property name="connection.url">jdbc:mysql://localhost:3306/dbtest?characterEncoding=utf-8&amp;serverTimezone=UTC&amp;allowMultiQueries=true</property>
+    	<property name="connection.username">root</property>
+    	<property name="connection.password">asd123asd</property>
+    	<!-- 2方言 -->
+    	<property name="dialect">
+    		org.hibernate.dialect.MySQL5Dialect
+    	</property>
+    	<!-- 3SQL相关 -->
+    	<property name="show_sql">true</property>
+    	<property name="format_sql">true</property>
+    	<property name="hbm2ddl.auto">update</property>
+    	<!-- 取消bean校验 -->
+    	<property name="javax.persistence.validation.mode">none</property>
+    
+    	<!-- 添加映射文件 -->
+    	<mapping resource="prv/hgs/domain/User.hbm.xml"/>
+    </session-factory>
+</hibernate-configuration>
