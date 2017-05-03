@@ -26,11 +26,24 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<version>6.0.5</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.struts/struts2-core -->
+		<dependency>
+			<groupId>org.apache.struts</groupId>
+			<artifactId>struts2-core</artifactId>
+			<version>2.5.10.1</version>
+		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.apache.struts/struts2-spring-plugin -->
 		<dependency>
 			<groupId>org.apache.struts</groupId>
 			<artifactId>struts2-spring-plugin</artifactId>
-			<version>2.5</version>
+			<version>2.5.10.1</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.struts/struts2-convention-plugin -->
+		<!-- 用于注解，不然不使用注解千万别导入此包 -->
+		<dependency>
+			<groupId>org.apache.struts</groupId>
+			<artifactId>struts2-convention-plugin</artifactId>
+			<version>2.5.10.1</version>
 		</dependency>
 		<!-- http://projects.spring.io/spring-framework/ -->
 		<dependency>
@@ -57,11 +70,8 @@
 			<version>4.3.5.RELEASE</version>
 		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
-		<!-- <dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-webmvc</artifactId>
-			<version>4.3.5.RELEASE</version>
-		</dependency> -->
+		<!-- <dependency> <groupId>org.springframework</groupId> <artifactId>spring-webmvc</artifactId> 
+			<version>4.3.5.RELEASE</version> </dependency> -->
 		<!-- https://mvnrepository.com/artifact/org.aspectj/aspectjweaver -->
 		<dependency>
 			<groupId>org.aspectj</groupId>

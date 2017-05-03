@@ -1,0 +1,5 @@
+项目演示的为Struts2、Hibernate、Spring 框架整合。
+其中分为两部分，*的为纯配置文件方式进行演示，*2为存注解方式进行演示（*指User、UserDao.../*2值User2、User2Dao）。
+直接运行为全注解方式。如果要体验全配置文件方式需要如下处理：
+1.将web.xml所指的applicationContent改为applicationContent2;
+2.将struts.xml文件中的userAction改成userAction2

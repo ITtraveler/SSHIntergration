@@ -21,6 +21,6 @@
     	<property name="javax.persistence.validation.mode">none</property>
     
     	<!-- 添加映射文件 -->
-    	<mapping resource="prv/hgs/domain/User.hbm.xml"/>
+    	<mapping resource="prv/hgs/domain/User2.hbm.xml"/>
     </session-factory>
 </hibernate-configuration>

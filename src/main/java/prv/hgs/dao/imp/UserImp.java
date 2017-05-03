@@ -2,37 +2,42 @@ package prv.hgs.dao.imp;
 
 import java.util.List;
 
-import org.springframework.orm.hibernate5.support.HibernateDaoSupport;
+import javax.persistence.Entity;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.orm.hibernate5.HibernateTemplate;
+import org.springframework.stereotype.Component;
 
 import prv.hgs.dao.UserDao;
 import prv.hgs.domain.User;
 
-
-public class UserImp extends HibernateDaoSupport implements UserDao {
+@Component
+public class UserImp implements UserDao {
+	@Autowired
+	private HibernateTemplate hibernateTemplate;
 
 	@Override
 	public void save(User user) {
-		this.getHibernateTemplate().save(user);
+		hibernateTemplate.save(user);
 	}
 
 	@Override
 	public void update(User user) {
-		this.getHibernateTemplate().update(user);
+		hibernateTemplate.update(user);
 	}
 
 	@Override
 	public void delete(User user) {
-		this.getHibernateTemplate().delete(user);
+		hibernateTemplate.delete(user);
 	}
 
 	@Override
 	public User findUserById(Integer id) {
-		return this.getHibernateTemplate().get(User.class, id);
+		return hibernateTemplate.get(User.class, id);
 	}
 
 	@Override
 	public List<User> findAllUser() {
-		return (List<User>) this.getHibernateTemplate().find("from User", null);
+		return (List<User>) hibernateTemplate.find("from User", null);
 	}
-
 }

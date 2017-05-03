@@ -50,25 +50,16 @@
 			<!-- 	<prop key="hibernate.current_session_context_class">thread</prop> -->
 			</props>
 		</property>
-		<property name="mappingResources" value="prv/hgs/domain/User.hbm.xml" />
+		<property name="packagesToScan" value="prv.hgs.domain" />
+		 <!-- <property name="mappingResources"  value="prv/hgs/domain/User2.hbm.xml" /> -->
 	</bean>
-	<!-- 事务管理 -->
-	<bean id="transactionManager"
-		class="org.springframework.orm.hibernate5.HibernateTransactionManager">
-		<property name="sessionFactory" ref="sessionFactory"></property>
-	</bean> 
 	
-	
-	<!-- 设置HibernateDaoSupport抽象类,使实现类无需再每个注入 -->
-	<bean id="hibernateDaoSupport"
-		class="org.springframework.orm.hibernate5.support.HibernateDaoSupport"
-		abstract="true">
+	<bean id="hibernateTemplate" class="org.springframework.orm.hibernate5.HibernateTemplate">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
-	<bean id="userImp" class="prv.hgs.dao.imp.UserImp" parent="hibernateDaoSupport"/>
 	
 	<!-- 通过注解进行增强事务 -->
-	<!-- <tx:annotation-driven transaction-manager="transactionManager" /> -->
+	<tx:annotation-driven transaction-manager="transactionManager" />
 	<!-- 通知进行增强事务 -->
 	<!-- <tx:advice id="txAdvice" transaction-manager="transactionManager">
 		<tx:attributes>

@@ -2,41 +2,37 @@ package prv.hgs.dao.imp;
 
 import java.util.List;
 
-import javax.persistence.Entity;
+import org.springframework.orm.hibernate5.support.HibernateDaoSupport;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.orm.hibernate5.HibernateTemplate;
-import org.springframework.stereotype.Component;
+import prv.hgs.dao.User2Dao;
+import prv.hgs.domain.User2;
 
-import prv.hgs.dao.UserDao;
-import prv.hgs.domain.User;
 
-public class UserImp2 implements UserDao{
-	@Autowired
-	private HibernateTemplate hibernateTemplate;
-	
+public class UserImp2 extends HibernateDaoSupport implements User2Dao {
+
 	@Override
-	public void save(User user) {
-		hibernateTemplate.save(user);
+	public void save(User2 user2) {
+		this.getHibernateTemplate().save(user2);
 	}
 
 	@Override
-	public void update(User user) {
-		hibernateTemplate.update(user);
+	public void update(User2 user2) {
+		this.getHibernateTemplate().update(user2);
 	}
 
 	@Override
-	public void delete(User user) {
-		hibernateTemplate.delete(user);
-	}
-	
-	@Override
-	public User findUserById(Integer id) {
-		return hibernateTemplate.get(User.class, id);
+	public void delete(User2 user2) {
+		this.getHibernateTemplate().delete(user2);
 	}
 
 	@Override
-	public List<User> findAllUser() {
-		return (List<User>) hibernateTemplate.find("from User", null);
+	public User2 findUser2ById(Integer id) {
+		return this.getHibernateTemplate().get(User2.class, id);
 	}
+
+	@Override
+	public List<User2> findAllUser2() {
+		return (List<User2>) this.getHibernateTemplate().find("from user2", null);
+	}
+
 }

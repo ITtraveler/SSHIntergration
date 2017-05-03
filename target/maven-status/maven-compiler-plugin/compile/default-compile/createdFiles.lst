@@ -1,6 +1,12 @@
+prv\hgs\action\UserAction2.class
+prv\hgs\dao\imp\UserImp2.class
+prv\hgs\action\UserAction.class
+prv\hgs\service\UserService.class
 prv\hgs\dao\imp\UserImp.class
+prv\hgs\dao\User2Dao.class
+prv\hgs\domain\User2.class
 prv\hgs\dao\UserDao.class
 prv\hgs\domain\User.class
+prv\hgs\service\User2Service.class
 prv\hgs\service\imp\UserServiceImp.class
-prv\hgs\dao\imp\UserImp2.class
-prv\hgs\service\UserService.class
+prv\hgs\service\imp\UserServiceImp2.class

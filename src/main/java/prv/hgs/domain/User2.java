@@ -1,32 +1,15 @@
 package prv.hgs.domain;
-
-import java.io.Serializable;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-
 /**
- * 注解方式
- * 
+ * User.hbm.xml的方式
  * @author hgs
  *
  */
-@Entity
-@Table(name = "user")
-public class User implements Serializable{
-	private static final long serialVersionUID = 1L;
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO) // 设置生成策略
+public class User2 {
 	private Integer id;
-	@Column(name = "username", length = 50)
 	private String username;
 	private String password;
-
-	public User() {
+	
+	public User2() {
 		super();
 	}
 
